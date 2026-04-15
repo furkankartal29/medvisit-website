@@ -45,7 +45,7 @@ function Navigation() {
               </a>
             ))}
             <div className="flex items-center gap-4 ml-4">
-              <a href="#pricing" className="px-5 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              <a href="#hero" className="px-5 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 Download Free
               </a>
             </div>
@@ -76,7 +76,7 @@ function Navigation() {
             </a>
           ))}
           <div className="h-px bg-slate-200 my-2"></div>
-          <a href="#pricing" className="px-4 py-3 text-center text-sm font-medium text-white bg-slate-900 rounded-xl hover:bg-slate-800 transition-colors shadow-md" onClick={() => setIsOpen(false)}>
+          <a href="#hero" className="px-4 py-3 text-center text-sm font-medium text-white bg-slate-900 rounded-xl hover:bg-slate-800 transition-colors shadow-md" onClick={() => setIsOpen(false)}>
             Download Free
           </a>
         </div>
@@ -87,7 +87,7 @@ function Navigation() {
 
 function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-100/50 rounded-full blur-3xl opacity-50 pointer-events-none -z-10"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-100/40 rounded-full blur-3xl opacity-40 pointer-events-none -z-10 translate-x-1/3 -translate-y-1/3"></div>
@@ -317,7 +317,7 @@ function Pricing() {
                 <span className="text-slate-600">Single Device</span>
               </li>
             </ul>
-            <a href="#download" className="block w-full py-4 px-6 text-center font-semibold text-slate-900 bg-white border-2 border-slate-200 rounded-2xl hover:bg-slate-50 hover:border-slate-300 transition-colors">
+            <a href="#hero" className="block w-full py-4 px-6 text-center font-semibold text-slate-900 bg-white border-2 border-slate-200 rounded-2xl hover:bg-slate-50 hover:border-slate-300 transition-colors">
               Get Started Free
             </a>
           </div>
@@ -351,7 +351,7 @@ function Pricing() {
                 <span className="text-slate-200">Financial Dashboard</span>
               </li>
             </ul>
-            <a href="#download" className="block w-full py-4 px-6 text-center font-semibold text-white bg-emerald-500 hover:bg-emerald-600 rounded-2xl transition-colors shadow-lg shadow-emerald-500/30">
+            <a href="#hero" className="block w-full py-4 px-6 text-center font-semibold text-white bg-emerald-500 hover:bg-emerald-600 rounded-2xl transition-colors shadow-lg shadow-emerald-500/30">
               Upgrade to Pro
             </a>
           </div>

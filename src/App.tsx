@@ -289,7 +289,7 @@ function Pricing() {
               className={`px-5 py-2 text-sm font-medium rounded-full transition-all ${isYearly ? 'bg-slate-900 text-white shadow-md' : 'text-slate-500 hover:text-slate-700'
                 }`}
             >
-              Yearly <span className="text-emerald-500 font-bold ml-1">Save 17%</span>
+              Yearly <span className="text-emerald-500 font-bold ml-1">Save 16%</span>
             </button>
           </div>
         </div>
@@ -330,7 +330,7 @@ function Pricing() {
             <h3 className="text-2xl font-bold mb-2">Solo Pro</h3>
             <p className="text-slate-400 mb-6 min-h-[48px]">Everything you need to run a full-time practice.</p>
             <div className="mb-8 flex items-baseline gap-2">
-              <span className="text-5xl font-extrabold">{isYearly ? '$29.90' : '$3'}</span>
+              <span className="text-5xl font-extrabold">{isYearly ? '$19.99' : '$1.99'}</span>
               <span className="text-slate-400 font-medium">{isYearly ? '/year' : '/month'}</span>
             </div>
             <ul className="space-y-4 mb-8">
@@ -357,13 +357,7 @@ function Pricing() {
           </div>
         </div>
 
-        {/* Founder's Edition */}
-        <div className="mt-12 text-center">
-          <p className="inline-flex items-center gap-2 text-slate-600 bg-white px-6 py-3 rounded-full border border-slate-200 shadow-sm text-sm">
-            🚀 Looking for a <strong className="text-slate-900">Lifetime deal</strong>? Get our <strong className="text-emerald-600">Founder's Edition for $99</strong>
-            <span className="text-slate-400">(Limited to first 100 users)</span>
-          </p>
-        </div>
+        {/* Removed Founder's edition */}
       </div>
     </section>
   );

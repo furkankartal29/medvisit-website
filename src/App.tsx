@@ -54,6 +54,7 @@ function Navigation() {
           {/* Mobile menu button */}
           <button
             type="button"
+            aria-label="Toggle mobile menu"
             className="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -150,7 +151,7 @@ function Hero() {
               </div>
 
               <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Next Appointment</h4>
+                <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Next Appointment</h4>
                 <div className="flex gap-4 items-center">
                   <div className="w-12 h-12 rounded-xl bg-orange-100 flex flex-col items-center justify-center text-orange-600 leading-tight">
                     <span className="text-sm font-bold">14</span>
@@ -328,10 +329,10 @@ function Pricing() {
               Most Popular
             </div>
             <h3 className="text-2xl font-bold mb-2">Solo Pro</h3>
-            <p className="text-slate-400 mb-6 min-h-[48px]">Everything you need to run a full-time practice.</p>
+            <p className="text-slate-500 mb-6 min-h-[48px]">Everything you need to run a full-time practice.</p>
             <div className="mb-8 flex items-baseline gap-2">
               <span className="text-5xl font-extrabold">{isYearly ? '$19.99' : '$1.99'}</span>
-              <span className="text-slate-400 font-medium">{isYearly ? '/year' : '/month'}</span>
+              <span className="text-slate-500 font-medium">{isYearly ? '/year' : '/month'}</span>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
@@ -384,7 +385,7 @@ function Footer() {
 
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 text-center sm:text-left">
             <div>
-              <h4 className="font-semibold text-slate-900 mb-4">Legal</h4>
+              <h3 className="font-semibold text-slate-900 mb-4">Legal</h3>
               <ul className="space-y-3">
                 <li><Link to="/terms" className="text-slate-500 hover:text-emerald-600 transition-colors text-sm">Terms of Service</Link></li>
                 <li><Link to="/privacy" className="text-slate-500 hover:text-emerald-600 transition-colors text-sm">Privacy Policy</Link></li>
@@ -392,7 +393,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 mb-4">Contact</h4>
+              <h3 className="font-semibold text-slate-900 mb-4">Contact</h3>
               <ul className="space-y-3">
                 <li><a href="mailto:support@medvisitapp.com" className="text-slate-500 hover:text-emerald-600 transition-colors text-sm flex items-center justify-center sm:justify-start gap-2"><Mail className="w-4 h-4" /> support@medvisitapp.com</a></li>
               </ul>

@@ -6,7 +6,7 @@ import { LegalPage } from './LegalPages';
 const Logo = () => (
   <div className="flex items-center gap-2">
     <div className="w-8 h-8 md:w-10 md:h-10 text-emerald-500 overflow-hidden rounded-lg flex items-center justify-center">
-      <img src="/logo.png" alt="Medvisit Logo" className="w-full h-full object-cover" />
+      <img src="/logo.webp" alt="Medvisit Logo" className="w-full h-full object-cover" />
     </div>
     <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-sky-600">
       Medvisit
@@ -374,7 +374,7 @@ function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 text-emerald-500 overflow-hidden rounded-lg flex items-center justify-center">
-                <img src="/logo.png" alt="Medvisit Logo" className="w-full h-full object-cover" />
+                <img src="/logo.webp" alt="Medvisit Logo" className="w-full h-full object-cover" />
               </div>
               <span className="text-xl font-bold text-slate-900">Medvisit</span>
             </Link>

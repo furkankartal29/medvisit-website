@@ -428,7 +428,7 @@ function App() {
       <div className="min-h-screen font-sans text-slate-900 bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/faq" element={<LandingPage />} />
+          <Route path="/faq" element={<LegalPage type="faq" />} />
           <Route path="/terms" element={<LegalPage type="terms" />} />
           <Route path="/privacy" element={<LegalPage type="privacy" />} />
           <Route path="/dpa" element={<LegalPage type="dpa" />} />

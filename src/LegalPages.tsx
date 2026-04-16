@@ -253,15 +253,73 @@ const dpaContent = {
     }
 };
 
+const faqContent = {
+    en: {
+        title: 'Frequently Asked Questions (FAQ)',
+        lastUpdated: 'April 2026',
+        intro: 'Find answers to the most common questions about Medvisit, your smart clinic management tool.',
+        sections: [
+            {
+                title: 'What is Medvisit?',
+                content: 'Medvisit is a business-to-business (B2B) Software-as-a-Service tool designed exclusively for independent healthcare professionals, therapists, and clinic managers. It helps you manage scheduling, package sessions, and track your clinic\\'s finances all in one place.'
+            },
+            {
+                title: 'Is Medvisit free to use?',
+                content: 'Yes! Our Free tier allows you to effortlessly manage up to twenty (20) appointments every calendar month at no cost. If you need unlimited appointments and premium features like expense tracking, you can upgrade to the Solo Pro plan.'
+            },
+            {
+                title: 'Is my patient data secure?',
+                content: 'Absolutely. We use industry-standard physical and digital security measures, including AES-256 encryption at rest and TLS 1.2+ in transit. We act strictly as a Data Processor and align with global privacy standards like HIPAA and GDPR.'
+            },
+            {
+                title: 'Can I use it on multiple devices?',
+                content: 'While the free tier is limited to a single device, upgrading to the Solo Pro tier grants you the ability to synchronize your schedule and financial tracking data seamlessly across multiple devices through your account.'
+            },
+            {
+                title: 'How do I cancel my subscription?',
+                content: 'All subscriptions are processing securely via the Apple App Store or Google Play Store. You can manage, upgrade, or cancel your Solo Pro subscription at any time directly through your device\\'s native account subscription settings.'
+            }
+        ]
+    },
+    tr: {
+        title: 'Sıkça Sorulan Sorular (SSS)',
+        lastUpdated: 'Nisan 2026',
+        intro: 'Akıllı klinik yönetim aracınız Medvisit hakkında en çok merak edilen soruların cevaplarını burada bulabilirsiniz.',
+        sections: [
+            {
+                title: 'Medvisit nedir?',
+                content: 'Medvisit; münhasıran bağımsız sağlık profesyonelleri, terapistler ve klinik yöneticileri için tasarlanmış bir randevu planlama, paket seans yönetimi ve finansal takip uygulamasıdır. Pratiğinizi tek bir ekrandan yönetmenizi sağlar.'
+            },
+            {
+                title: 'Medvisit tamamen ücretsiz mi?',
+                content: 'Evet! Ücretsiz planımız sayesinde her takvim ayında yirmi (20) randevuya kadar sistemi hiçbir ücret ödemeden kullanabilirsiniz. Sınırsız randevu ve gelişmiş finansal takip için Solo Pro planına dilediğiniz zaman geçebilirsiniz.'
+            },
+            {
+                title: 'Hasta verilerim güvende mi?',
+                content: 'Kesinlikle. Hasta ve iş verileriniz AES-256 ile şifrelenir ve TLS protokolleri üzerinden taşınır. KVKK ve GDPR gibi küresel standartlara tam uyumlu olarak verilerinizi asla üçüncü taraflara satmaz veya paylaşmayız.'
+            },
+            {
+                title: 'Farklı cihazlarda (telefon/tablet) aynı anda kullanabilir miyim?',
+                content: 'Ücretsiz plan tek cihaz üzerinden erişime izin verirken, Solo Pro planına sahipseniz hesabınıza giriş yaptığınız tüm cihazlar arasında randevu ve gelir/gider verileriniz anlık olarak ve güvenle eşitlenir.'
+            },
+            {
+                title: 'Aboneliğimi nasıl iptal edebilirim?',
+                content: 'Tüm ödeme ve abonelik işlemleri doğrudan Apple App Store veya Google Play Store altyapısı üzerinden güvenle gerçekleştirilir. Sahip olduğunuz aboneliği doğrudan telefonunuzun kendi Abonelikler/Hesap menüsünden istediğiniz zaman iptal edebilirsiniz.'
+            }
+        ]
+    }
+};
+
 type Language = 'en' | 'tr';
 
-export function LegalPage({ type, defaultLang = 'en' }: { type: 'terms' | 'privacy' | 'dpa'; defaultLang?: Language }) {
+export function LegalPage({ type, defaultLang = 'en' }: { type: 'terms' | 'privacy' | 'dpa' | 'faq'; defaultLang?: Language }) {
     const [lang, setLang] = useState<Language>(defaultLang);
     const navigate = useNavigate();
 
     const getContent = () => {
         if (type === 'terms') return termsContent[lang] || termsContent['en'];
         if (type === 'dpa') return (dpaContent as any)[lang] || dpaContent['en'];
+        if (type === 'faq') return (faqContent as any)[lang] || faqContent['en'];
         return privacyContent[lang] || privacyContent['en'];
     };
     const contentSource = getContent();

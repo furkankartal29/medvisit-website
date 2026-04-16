@@ -261,7 +261,7 @@ const faqContent = {
         sections: [
             {
                 title: 'What is Medvisit?',
-                content: 'Medvisit is a business-to-business (B2B) Software-as-a-Service tool designed exclusively for independent healthcare professionals, therapists, and clinic managers. It helps you manage scheduling, package sessions, and track your clinic\\'s finances all in one place.'
+                content: "Medvisit is a business-to-business (B2B) Software-as-a-Service tool designed exclusively for independent healthcare professionals, therapists, and clinic managers. It helps you manage scheduling, package sessions, and track your clinic's finances all in one place."
             },
             {
                 title: 'Is Medvisit free to use?',
@@ -277,7 +277,7 @@ const faqContent = {
             },
             {
                 title: 'How do I cancel my subscription?',
-                content: 'All subscriptions are processing securely via the Apple App Store or Google Play Store. You can manage, upgrade, or cancel your Solo Pro subscription at any time directly through your device\\'s native account subscription settings.'
+                content: "All subscriptions are processing securely via the Apple App Store or Google Play Store. You can manage, upgrade, or cancel your Solo Pro subscription at any time directly through your device's native account subscription settings."
             }
         ]
     },

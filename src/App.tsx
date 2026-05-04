@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Calendar, DollarSign, Users, CheckCircle2, Mail } from 'lucide-react';
-import { LegalPage } from './LegalPages';
+
+// Lazy load the LegalPages since it contains a lot of text and isn't needed on the initial render
+const LegalPage = lazy(() => import('./LegalPages').then(module => ({ default: module.LegalPage })));
 
 const Logo = () => (
   <div className="flex items-center gap-2">
@@ -410,6 +412,11 @@ function Footer() {
 }
 
 function LandingPage() {
+  // Update document title for SEO when visiting landing page
+  useEffect(() => {
+    document.title = "Medvisit | Smart Clinic Management";
+  }, []);
+
   return (
     <>
       <Navigation />
@@ -423,20 +430,29 @@ function LandingPage() {
   );
 }
 
+// Fallback loader for Suspense
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen font-sans text-slate-900 bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/faq" element={<LegalPage type="faq" />} />
-          <Route path="/terms" element={<LegalPage type="terms" />} />
-          <Route path="/privacy" element={<LegalPage type="privacy" />} />
-          <Route path="/dpa" element={<LegalPage type="dpa" />} />
-          {/* Mobile App Redirect Matches */}
-          <Route path="/data-processing-addendum" element={<LegalPage type="dpa" defaultLang="en" />} />
-          <Route path="/tr/kvkk-aydinlatma-metni" element={<LegalPage type="dpa" defaultLang="tr" />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/faq" element={<LegalPage type="faq" />} />
+            <Route path="/terms" element={<LegalPage type="terms" />} />
+            <Route path="/privacy" element={<LegalPage type="privacy" />} />
+            <Route path="/dpa" element={<LegalPage type="dpa" />} />
+            {/* Mobile App Redirect Matches */}
+            <Route path="/data-processing-addendum" element={<LegalPage type="dpa" defaultLang="en" />} />
+            <Route path="/tr/kvkk-aydinlatma-metni" element={<LegalPage type="dpa" defaultLang="tr" />} />
+          </Routes>
+        </Suspense>
       </div>
     </BrowserRouter>
   );

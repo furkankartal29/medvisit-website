@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Globe, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -325,6 +325,11 @@ export function LegalPage({ type, defaultLang = 'en' }: { type: 'terms' | 'priva
     const contentSource = getContent();
     const intro = 'intro' in contentSource ? contentSource.intro : null;
     const showToggle = true;
+
+    // Update document title for SEO based on the page content
+    useEffect(() => {
+        document.title = `${contentSource.title} | Medvisit`;
+    }, [contentSource.title]);
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
